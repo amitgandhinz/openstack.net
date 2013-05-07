@@ -17,7 +17,6 @@ namespace net.openstack.Core.Providers
         /// <summary>
         /// Get Details about a Cloud Backup Agent
         /// </summary>
-        /// <param name="id">The cloud backup agent id.</param>
         /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/><remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
         /// <returns><see cref="BackupAgent"/></returns>
         IList<BackupAgent> ListAgents(CloudIdentity identity = null);
@@ -133,6 +132,90 @@ namespace net.openstack.Core.Providers
 
         #endregion
 
-      
+
+        #region Backups
+
+        /// <summary>
+        /// Get a Backup Execution
+        /// </summary>
+        /// <param name="id">The cloud backup configuration to delete.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        void GetBackupExecution(int id, CloudIdentity identity = null);
+
+        /// <summary>
+        /// Start a Backup Execution
+        /// </summary>
+        /// <param name="backupConfigurationId">The cloud backup configuration to start.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        int StartBackupExecution(int backupConfigurationId, CloudIdentity identity = null);
+
+        /// <summary>
+        /// Stop a Backup Execution
+        /// </summary>
+        /// <param name="id">The cloud backup execution to stop.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        void StopBackupExecution(int id, CloudIdentity identity = null);
+
+        /// <summary>
+        /// Delete a Backup Configuration
+        /// </summary>
+        /// <param name="id">The cloud backup configuration to delete.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        void GetBackupReport(int id, CloudIdentity identity = null);
+
+        /// <summary>
+        /// Get Backups that completed successfully that can be restored
+        /// </summary>
+        /// <param name="backupConfigurationId">The cloud backup configuration to list successful backups for.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        void ListSuccessfulBackups(int backupConfigurationId, CloudIdentity identity = null);
+
+
+        #endregion
+
+        #region Restore
+
+
+        /// <summary>
+        /// Start a new Restore
+        /// </summary>
+        /// <param name="restore">The restore configuration to start.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        BackupRestoreConfiguration StartRestore(BackupRestoreConfiguration restore, CloudIdentity identity = null);
+
+
+        /// <summary>
+        /// Start a new Restore
+        /// </summary>
+        /// <param name="restoreId">The restore execution to stop.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        void StopRestore(int restoreId, CloudIdentity identity = null);
+
+        /// <summary>
+        /// Get a completed restore report
+        /// </summary>
+        /// <param name="restoreId">The restore execution to report on.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        void GetRestoreReport(int restoreId, CloudIdentity identity = null);
+
+
+        /// <summary>
+        /// Get an executing restore
+        /// </summary>
+        /// <param name="restoreId">The restore execution to report on.</param>
+        /// <param name="identity">The users Cloud Identity. <see cref="CloudIdentity"/> <remarks>If not specified, the default identity given in the constructor will be used.</remarks> </param>
+        /// <returns></returns>
+        void GetRestoreExecution(int restoreId, CloudIdentity identity = null);
+
+
+        #endregion
     }
 }

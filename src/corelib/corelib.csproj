@@ -50,6 +50,7 @@
     <Compile Include="Core\Domain\AddressDetails.cs" />
     <Compile Include="Core\Domain\BackupAgent.cs" />
     <Compile Include="Core\Domain\BackupConfiguration.cs" />
+    <Compile Include="Core\Domain\BackupRestoreConfiguration.cs" />
     <Compile Include="Core\Domain\ProviderStateBase.cs" />
     <Compile Include="Core\Domain\ServerBase.cs" />
     <Compile Include="Core\Domain\ServerImage.cs" />
