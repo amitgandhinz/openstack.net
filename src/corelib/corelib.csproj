@@ -51,6 +51,14 @@
     <Compile Include="Core\Domain\BackupAgent.cs" />
     <Compile Include="Core\Domain\BackupConfiguration.cs" />
     <Compile Include="Core\Domain\BackupRestoreConfiguration.cs" />
+    <Compile Include="Core\Domain\BackupActivity.cs" />
+    <Compile Include="Core\Domain\BackupReport.cs" />
+    <Compile Include="Core\Domain\BackupExecution.cs" />
+    <Compile Include="Core\Domain\BackupRestoreExecution.cs" />
+    <Compile Include="Core\Domain\BackupAgentConfiguration.cs" />
+    <Compile Include="Core\Domain\BackupCleanupReport.cs" />
+    <Compile Include="Core\Domain\BackupCleanupExecution.cs" />
+    <Compile Include="Core\Domain\BackupRestoreReport.cs" />
     <Compile Include="Core\Domain\ProviderStateBase.cs" />
     <Compile Include="Core\Domain\ServerBase.cs" />
     <Compile Include="Core\Domain\ServerImage.cs" />
